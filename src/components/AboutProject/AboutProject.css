@@ -1,0 +1,175 @@
+.about-project {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 110px 0 110px 0;
+ }
+ 
+ .about-project__title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal; 
+    letter-spacing: -0.88px;
+    border-bottom: 1px solid #000000;
+    margin: 0 0 70px 0;
+    padding-bottom: 23px;
+ }
+ 
+ .about-project__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 110px;
+ }
+ 
+ .about-project__column {
+    max-width: 550px;
+ }
+ 
+ .about-project__subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal; 
+    letter-spacing: -0.8px;
+    margin: 0;
+    padding: 0 0 26px 0;
+ }
+ 
+ .about-project__description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+ }
+ 
+ .about-project__time {
+    display: flex;
+    height: 36px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal; 
+ }
+ 
+ .about-project__week {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+    background: #000000;
+    color: #ffffff;
+ }
+ 
+ .about-project__weeks {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: center;
+    background: #F2F2F2;
+    color: #000000;
+ }
+ 
+ .about-project__time-description {
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #A0A0A0;
+ }
+ 
+ .about-project__backend-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+ }
+ 
+ .about-project__frontend-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+ }
+ 
+ @media screen and (min-width: 451px) and (max-width: 1200px) {
+    .about-project {
+       padding: 90px 50px;
+    }
+ 
+    .about-project__container {
+       gap: 30px;
+       margin-bottom: 93px;
+    }
+ 
+    .about-project__column {
+       max-width: 320px;
+    }
+ 
+    .about-project__subtitle {
+       padding-bottom: 22px;
+    }
+ 
+    .about-project__description {
+       font-size: 12px;
+       line-height: 18px;
+    }
+ }
+ 
+ @media screen and (max-width: 450px) {
+    .about-project {
+       padding: 70px 18px;
+    }
+ 
+    .about-project__title {
+       font-size: 18px;
+       line-height: 22px;
+       border-bottom: 1px solid #000000;
+       margin-bottom: 60px;
+       padding-bottom: 28px;
+    }
+ 
+    .about-project__container {
+       flex-direction: column;
+       gap: 56px;
+       margin-bottom: 60px;
+    }
+ 
+    .about-project__subtitle {
+       font-size: 18px;
+       line-height: 22px;
+       padding-bottom: 16px;
+    }
+ 
+    .about-project__description {
+       font-size: 11px;
+       line-height: 16px;
+    }
+ 
+    .about-project__time {
+       height: 35px;
+       font-size: 11px;
+       line-height: 13px;
+       margin-bottom: 10px;
+    }
+ 
+    .about-project__week {
+       width: 35%;
+    }
+ 
+    .about-project__weeks {
+       width: 65%;
+    }
+ 
+    .about-project__time-description{
+       font-size: 11px;
+       line-height: 13px;
+    }
+ 
+    .about-project__backend-text {
+       width: 35%;
+    }
+ 
+    .about-project__frontend-text {
+       width: 65%;
+    }
+ }

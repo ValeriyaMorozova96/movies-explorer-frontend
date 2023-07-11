@@ -1,0 +1,49 @@
+.navigation {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+ }
+ 
+ .navigation__signup {
+   font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    padding-top: 29px;
+ }
+ .navigation__signin {
+   margin-top: 21px;
+   font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    border-radius: 3px;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 8px 20px;
+    cursor: pointer;
+ }
+ 
+ .navigation__link:hover,
+ .navigation__button:hover {
+    transition: opacity 0.5s linear;
+    opacity: 0.5;
+ }
+ 
+ @media screen and (max-width: 500px) {
+    .navigation {
+       gap: 14px;
+    }
+ 
+    .navigation__signup  {
+       font-size: 10px;
+    }
+ 
+    .navigation__signin {
+       font-size: 10px;
+       padding: 5px 12px;
+       margin-top: 24px;
+    }
+ }

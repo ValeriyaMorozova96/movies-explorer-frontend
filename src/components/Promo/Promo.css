@@ -1,0 +1,40 @@
+.promo {
+    display: flex;
+    flex-direction: column;
+    min-height: 524px;
+    margin: 0;
+    background-color: #F3C1F8;
+ }
+ 
+ .promo__title {
+    display: flex;
+    max-width: 730px;
+    min-height: 320px;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: center;
+    align-items: center;
+    letter-spacing: -2px; 
+    margin: 82px auto 122px;
+    color: #000000;
+    background-image: url('../../images/praktikum-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+ @media screen and (min-width: 441px) and (max-width: 800px) {
+    .promo__title {
+       margin: 224px auto 240px;
+    }
+ }
+ 
+ @media screen and (max-width: 440px) {
+    .promo__title {
+       font-size: 31px;
+       line-height: 39px;
+       margin: 142px auto 180px;
+       background-size: 248px;
+       max-width: calc(100% - 10px)
+    }
+ }
