@@ -6,6 +6,14 @@
    min-height: 74px;
    padding: 0 70px 0 70px;
 }
+.header_movies {
+   background-color: #ffffff;
+   display: flex;
+   justify-content: space-between;
+   max-width: 1280px;
+   min-height: 74px;
+   padding: 0 70px 0 70px;
+}
 
 .header__logo {
    width: 38px;
