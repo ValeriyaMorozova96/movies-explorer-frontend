@@ -1,7 +1,7 @@
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
 
-const MoviesCardList = () => {
+const MoviesCardList = ({ isAllMovies }) => {
    return (
       <section className="cards">
          <div className="cards__container">
@@ -14,7 +14,7 @@ const MoviesCardList = () => {
             <MoviesCard />
             <MoviesCard />
          </div>
-         <button className="cards__button">Ещё</button>
+         <button className={isAllMovies ? 'cards__button' : 'cards__button_hidden'}>Ещё</button>
       </section>
    )
 }

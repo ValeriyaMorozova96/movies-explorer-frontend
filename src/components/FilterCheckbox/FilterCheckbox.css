@@ -21,13 +21,13 @@
     content: '';
     width: 16px;
     height: 16px;
-    left: 5.56%;
+    left: 5%;
     right: 50%;
     top: 10%;
-    bottom: 60.81%;
+    bottom: 60%;
     border-radius: 50%;
     background-color: #F5F5F5;
-    transition: 0.2s linear;
+    transition: 0.3s linear;
  }
  
  .checkbox__input:checked {
@@ -36,8 +36,8 @@
  
  .checkbox__input:checked::after {
     left: 50%;
-    right: 5.56%;
-    transition: 0.2s linear;
+    right: 5%;
+    transition: 0.3s linear;
     background-color: #2BE080;
  }
  

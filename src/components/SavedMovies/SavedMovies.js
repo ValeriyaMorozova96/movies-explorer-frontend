@@ -4,13 +4,13 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const SavedMovies = () => {
+const SavedMovies = ({ loggedIn }) => {
    return (
       <>
-      <Header />
+      <Header loggedIn={loggedIn}/>
       <section className="saved-movies">
          <SearchForm />
-         <MoviesCardList />
+         <MoviesCardList isAllMovies={false} />
       </section>
       <Footer />
       </>

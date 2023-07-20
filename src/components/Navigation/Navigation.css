@@ -1,49 +1,122 @@
 .navigation {
-    display: flex;
-    gap: 30px;
-    margin: 0;
- }
- 
- .navigation__signup {
+   display: flex;
+   gap: 30px;
+   margin: 0;
+   justify-content: space-between;
+}
+
+.navigation_movies {
+   max-width: 1100px;
+   width: 100%;
+}
+
+.navigation__signup {
    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-    text-decoration: none;
-    color: #000000;
-    cursor: pointer;
-    padding-top: 29px;
- }
- .navigation__signin {
+   font-weight: 500;
+   line-height: 16px;
+   text-decoration: none;
+   color: #000000;
+   cursor: pointer;
+   padding-top: 29px;
+}
+
+.navigation__signin {
    margin-top: 21px;
    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-    border-radius: 3px;
-    border: none;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 8px 20px;
-    cursor: pointer;
- }
- 
- .navigation__link:hover,
- .navigation__button:hover {
-    transition: opacity 0.5s linear;
-    opacity: 0.5;
- }
- 
- @media screen and (max-width: 500px) {
-    .navigation {
-       gap: 14px;
-    }
- 
-    .navigation__signup  {
-       font-size: 10px;
-    }
- 
-    .navigation__signin {
-       font-size: 10px;
-       padding: 5px 12px;
-       margin-top: 24px;
-    }
- }
+   font-weight: 500;
+   line-height: 16px;
+   border-radius: 3px;
+   border: none;
+   background-color: #000000;
+   color: #ffffff;
+   padding: 8px 20px;
+   cursor: pointer;
+}
+
+.navigation__links {
+   max-width: 904px;
+   width: 100%;
+   display: flex;
+   gap: 16px;
+   margin-left: 44px;
+}
+
+.navigation__link {
+   font-size: 13px;
+   font-weight: 400;
+   line-height: 18px;
+   text-decoration: none;
+   color: #000000;
+   cursor: pointer;
+   margin-top: 28px;
+}
+
+.navigation__link_active {
+   font-weight: 500;
+}
+
+.navigation__button {
+   width: 100px;
+   height: 30px;
+   background-image: url(../../images/profile-icon.svg);
+   background-color: transparent;
+   border: none;
+   margin: 20px 0 0;
+   padding: 0;
+   cursor: pointer;
+}
+
+.navigation__button-burger {
+   display: none;
+   cursor: pointer;
+}
+
+.navigation__button:hover,
+.navigation__link:hover,
+.navigation__signup:hover,
+.navigation__signin:hover {
+   transition: opacity 0.5s linear;
+   opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+   .navigation__links {
+      display: none;
+   }
+   .navigation__button {
+      display: none;
+   }
+
+   .navigation__button-burger {
+      display: block;
+      background-image: url(../../images/burger-icon.svg);;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      padding: 0;
+      margin-top: 15px;
+      width: 40px;
+      height: 43px;
+   }
+}
+
+.navigation__button-burger:hover {
+   transition: opacity 0.5s linear;
+   opacity: 0.5;
+}
+
+@media screen and (max-width: 500px) {
+   .navigation {
+      gap: 14px;
+   }
+
+   .navigation__signup {
+      font-size: 10px;
+   }
+
+   .navigation__signin {
+      font-size: 10px;
+      padding: 5px 12px;
+      margin-top: 24px;
+   }
+}

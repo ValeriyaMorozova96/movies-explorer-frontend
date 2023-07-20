@@ -4,13 +4,13 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const Movies = () => {
+const Movies = ({ loggedIn }) => {
    return (
       <>
-      <Header />
+      <Header loggedIn={loggedIn}/>
       <section className="movies">
          <SearchForm />
-         <MoviesCardList/>
+         <MoviesCardList isAllMovies={true}/>
       </section>
       <Footer />
       </>

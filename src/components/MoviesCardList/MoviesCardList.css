@@ -28,6 +28,10 @@
     padding: 11px 0 9px;
     cursor: pointer;
  }
+
+ .cards__button_hidden {
+   display: none;
+ }
  
  .cards__button:hover {
     transition: opacity 0.5s linear;

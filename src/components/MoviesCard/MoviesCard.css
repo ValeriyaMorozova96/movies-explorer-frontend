@@ -3,51 +3,50 @@
     height: 218px;
     position: relative;
     box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05); 
+    border-radius: 8px;
  }
  
  .card__movie-description {
     display: flex;
     flex-direction: column;
-    padding: 14px 12px 14px;
+    padding: 14px 12px;
  }
- 
+ .card__name-container {
+   display: flex;
+   justify-content: space-between;
+ }
  .card__movie-name {
     font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: normal; 
     color: #000000;
-    margin: 0 0 9px 0;
+    margin: 0 0 10px 0;
  }
  
  .card__movie-time {
     font-weight: 400;
     font-size: 11px;
-    line-height: 13px;
+    line-height: normal; 
     color: #A0A0A0;
     margin: 0;
  }
  
  .card__button {
     display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 165px;
-    right: 12px;
+    width: 22px;
+    height: 22px;
     background-image: url(../../images/save-icon.svg);
     border: none;
     padding: 0;
     cursor: pointer;
     background-color: transparent;
+    background-position: center;
  }
  
  .card__button_saved {
     display: none;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 165px;
-    right: 12px;
+    width: 22px;
+    height: 22px;
     background-image: url(../../images/saved-icon.svg);
     background-position: center;
     border: none;
@@ -57,14 +56,12 @@
  }
  
  .card__button_delete {
-    display: none;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 165px;
-    right: 12px;
+    display: block;
+    width: 16px;
+    height: 16px;
     background-color: #222222;
     background-image: url(../../images/delete-icon.svg);
+    background-repeat: no-repeat;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -76,7 +73,7 @@
     height: 151px;
  }
  
- @media screen and (max-width: 900px) {
+ @media screen and (max-width: 910px) {
     .card {
        width: 339px;
        height: 257px;
@@ -85,15 +82,6 @@
     .card__movie-cover {
        width: 339px;
        height: 190px;
-    }
-    .card__button {
-      top: 204px;
-    }
-    .card__button_saved {
-      top: 204px;
-    }
-    .card__button_delete {
-      top: 204px;
     }
  }
  
@@ -106,14 +94,5 @@
     .card__movie-cover {
        width: 300px;
        height: 168px;
-    }
-    .card__button {
-      top: 182px;
-    }
-    .card__button_saved {
-      top: 182px;
-    }
-    .card__button_delete {
-      top: 182px;
     }
  }
