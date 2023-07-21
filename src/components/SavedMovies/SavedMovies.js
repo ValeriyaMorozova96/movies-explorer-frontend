@@ -8,10 +8,10 @@ const SavedMovies = ({ loggedIn }) => {
    return (
       <>
       <Header loggedIn={loggedIn}/>
-      <section className="saved-movies">
+      <main className="saved-movies">
          <SearchForm />
          <MoviesCardList isAllMovies={false} />
-      </section>
+      </main>
       <Footer />
       </>
    )

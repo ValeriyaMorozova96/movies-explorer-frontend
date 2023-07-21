@@ -22,8 +22,6 @@
  }
  
  .portfolio__link-container {
-    display: flex;
-    justify-content: space-between;
     font-weight: 400;
     font-size: 30px;
     line-height: 50px;
@@ -43,6 +41,8 @@
     color: #000000;
     text-decoration: none;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
  }
  
  .portfolio__link:hover {

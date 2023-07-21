@@ -8,10 +8,10 @@ const Movies = ({ loggedIn }) => {
    return (
       <>
       <Header loggedIn={loggedIn}/>
-      <section className="movies">
+      <main className="movies">
          <SearchForm />
          <MoviesCardList isAllMovies={true}/>
-      </section>
+      </main>
       <Footer />
       </>
    )

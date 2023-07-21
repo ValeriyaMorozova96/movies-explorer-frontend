@@ -9,20 +9,20 @@ const Portfolio = () => {
             <li className="portfolio__link-container">
                <a className="portfolio__link" rel='noreferrer' href="https://valeriyamorozova96.github.io/how-to-learn/" target="_blank">
                   Статичный сайт
+                  <span>↗</span>
                </a>
-               <span>↗</span>
             </li>
             <li className="portfolio__link-container">
                <a className="portfolio__link" rel='noreferrer' href="https://valeriyamorozova96.github.io/russian-travel/" target="_blank">
                   Адаптивный сайт
+                  <span>↗</span>
                </a>
-               <span>↗</span>
             </li>
             <li className="portfolio__link-container">
                <a className="portfolio__link" rel='noreferrer' href="https://morozovavs.nomoreparties.sbs" target="_blank">
                   Одностраничное приложение
+                  <span>↗</span>
                </a>
-               <span>↗</span>
             </li>
          </ul>
       </div>
