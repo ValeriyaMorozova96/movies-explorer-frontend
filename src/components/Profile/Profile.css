@@ -1,0 +1,133 @@
+.profile {
+    max-width: 410px;
+    margin: 74px auto 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 123px;
+    margin-top: 0;
+    color: #000;
+    text-align: center;
+}
+
+
+.profile__form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.profile__form-fieldset {
+    border: none;
+    width: 410px;
+    padding: 0;
+}
+
+.profile__form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px #E8E8E8;
+
+}
+
+.profile__form-container:last-child {
+    border: none;
+}
+
+.profile__form-label {
+    max-width: 141px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: normal;
+    color: #000;
+}
+
+.profile__form-input {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 122px;
+    border: none;
+    color: #000;
+    text-align: right;
+    padding-bottom: 16px;
+    padding-top: 17px;
+    padding-bottom: 10px;
+    background-color: #FFFFFF
+}
+
+.profile__form-input:focus {
+    outline: none;
+}
+
+.profile__form-button-change {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 220px auto 16px;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.profile__form-button-exit {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 auto;
+    border: none;
+    background-color: transparent;
+    color: #FF4062;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.profile__form-button-exit:hover {
+    transition: opacity 0.5s linear;
+    opacity: 0.5;
+}
+
+.profile__form-button-change:hover {
+    transition: opacity 0.5s linear;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        margin-top: 236px;
+        margin-bottom: 269px;
+    }
+    .profile_title {
+        margin-bottom: 96px;
+    }
+    .profile__form-button-change {
+        margin-top: 210px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile {
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+    .profile_title {
+        margin-bottom: 80px;
+    }
+    .profile__form-button-change {
+        margin-top: 379px;
+    }
+    .profile__form-fieldset{
+        width: 260px;
+    }
+}
