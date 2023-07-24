@@ -20,7 +20,7 @@ const Profile = ({ loggedIn }) => {
                             <input type="email" id="profile__form-input-email" className="profile__form-input" value="potcha@yandex.ru" name="email" required />
                         </div>
                     </fieldset>
-                    <button className='profile__form-button-change' type='submit'>Изменить</button>
+                    <button className='profile__form-button-change' type='submit'>Редактировать</button>
                 </form>
                 <button className='profile__form-button-exit' type='button'>Выйти из акаунта</button>
             </section>
