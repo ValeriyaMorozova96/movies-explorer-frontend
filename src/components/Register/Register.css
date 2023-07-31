@@ -99,6 +99,12 @@ margin-bottom: 0;
     cursor: pointer;
 }
 
+.register__form-button_disabled {
+    background: #F8F8F8;
+    pointer-events: none;
+    color: #C2C2C2;
+ }
+
 .register__form-button:hover {
     transition: opacity 0.5s linear;
     opacity: 0.5;

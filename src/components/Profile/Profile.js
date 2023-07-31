@@ -1,12 +1,10 @@
 import React from 'react';
 import './Profile.css';
-import Header from '../Header/Header';
 
-const Profile = ({ loggedIn }) => {
+const Profile = ({ onSignOut }) => {
 
     return (
         <>
-            <Header loggedIn={loggedIn}/>
             <section className="profile">
                 <h2 className='profile__title'>Привет, Валерия!</h2>
                 <form className="profile__form" action="#" name="profile-form">
@@ -22,7 +20,7 @@ const Profile = ({ loggedIn }) => {
                     </fieldset>
                     <button className='profile__form-button-change' type='submit'>Редактировать</button>
                 </form>
-                <button className='profile__form-button-exit' type='button'>Выйти из акаунта</button>
+                <button className='profile__form-button-exit' type='button' onClick={onSignOut}>Выйти из акаунта</button>
             </section>
         </>
     );
