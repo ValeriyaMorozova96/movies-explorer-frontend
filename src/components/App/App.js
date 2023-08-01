@@ -21,6 +21,7 @@ function App() {
   const { pathname } = useLocation();
   const isMainPage = pathname === "/";
   const [loggedIn, setIsLoggedIn] = useState(false);
+  const [isTokenChecked, setIsTokenChecked] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [errorMessage, setErrorMessage] = useState();
 
@@ -34,6 +35,7 @@ function App() {
             apiMain.setToken(token);
             setIsLoggedIn(true);
             setCurrentUser()
+            setIsTokenChecked(true);
           }
         })
         .catch(err => {
@@ -43,7 +45,7 @@ function App() {
           } else if (err === 'Ошибка: 403') {
             setErrorMessage('При авторизации произошла ошибка. Переданный токен некорректен');
           }
-        });
+        })
     }
   }, [loggedIn]);
 
@@ -109,12 +111,14 @@ function App() {
             element={<ProtectedRoute
               element={Movies}
               loggedIn={loggedIn}
+              isTokenChecked={isTokenChecked}
             />}
           />
           <Route path="/saved-movies"
             element={<ProtectedRoute
               element={SavedMovies}
               loggedIn={loggedIn}
+              isTokenChecked={isTokenChecked}
             />}
           />
           <Route path="/profile"
@@ -122,6 +126,7 @@ function App() {
               element={Profile}
               loggedIn={loggedIn}
               onSignOut={handleSignOut}
+              isTokenChecked={isTokenChecked}
             />}
           />
           <Route path="*" element={<ErrorPage />} />
