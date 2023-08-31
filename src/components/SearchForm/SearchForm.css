@@ -38,6 +38,17 @@
    padding: 0;
 }
 
+.search__form-error {
+   display: block;
+   max-width: 100%;
+   color: #FF4062;
+   font-size: 20px;
+   font-weight: 400;
+   line-height: normal;
+   text-align: center;
+   padding-bottom: 20px;
+}
+
 .search__button:hover {
    transition: opacity 0.5s linear;
    opacity: 0.5;

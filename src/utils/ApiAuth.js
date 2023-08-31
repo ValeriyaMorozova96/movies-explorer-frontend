@@ -1,5 +1,4 @@
 export const BASE_URL = 'https://api.morozovavs.movies.nomoreparties.sbs'
-//export const BASE_URL = 'http://localhost:3000';
 
 function getServerReply(res) {
     if (res.ok) {

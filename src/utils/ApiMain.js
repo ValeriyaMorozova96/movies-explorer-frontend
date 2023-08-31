@@ -1,85 +1,73 @@
-export class ApiMain {
-    constructor({ url, headers }) {
-        this._url = url;
-        this._headers = headers;
-    }
-    _getServerReply(res) {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-    }
-    setToken(token) {
-        this._headers.authorization = `Bearer ${token}`;
-    }
-    getMyInfo() {
-        return fetch(`${this._url}/users/me`,
-            {
-                method: 'GET',
-                headers: this._headers
-            })
-            .then(this._getServerReply)
-    }
+export const BASE_URL = 'https://api.morozovavs.movies.nomoreparties.sbs';
 
-    //изменение профайла пользователя
-    changeProfileData({ name, about }) {
-        return fetch(`${this._url}/users/me`,
-            {
-                method: 'PATCH',
-                headers: this._headers,
-                body: JSON.stringify({ name, about })
-            })
-            .then(this._getServerReply)
-    }
+const headers = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+  Authorization: ''
+};
 
+const getServerReply = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Ошибка: ${res.status}`);
+};
 
-    //сохранить фильм
-    saveMovie = (movie) => {
-        return fetch(`${this._url}/movies`, {
-            method: 'POST',
-            headers: this._headers,
-            body: JSON.stringify({
-                country: movie.country,
-                director: movie.director,
-                duration: movie.duration,
-                year: movie.year,
-                description: movie.description,
-                image: `https://api.nomoreparties.co${movie.image.url}`,
-                trailerLink: movie.trailerLink,
-                thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
-                movieId: movie.id,
-                nameRU: movie.nameRU,
-                nameEN: movie.nameEN,
-            }),
-        })
-            .then(this._getServerReply)
-    }
+export const setToken = (token) => {
+  headers.Authorization = `Bearer ${token}`;
+};
 
-    //удалить фильм
-    deleteMovie = (id) => {
-        return fetch(`${this._url}/movies/${id}`, {
-            method: 'DELETE',
-            headers: this._headers,
-        })
-            .then(this._getServerReply)
-    }
+export const getMyInfo = () => {
+  return fetch(`${BASE_URL}/users/me`,
+    {
+      method: 'GET',
+      headers: headers
+    })
+    .then(getServerReply)
+};
 
-    //получить фильмы
-    getMovies = () => {
-        return fetch(`${this._url}/movies`, {
-            method: 'GET',
-            headers: this._headers,
-        })
-            .then(this._getServerReply)
-    }
+export const changeProfileData = ({ email, name }) => {
+  return fetch(`${BASE_URL}/users/me`,
+    {
+      method: 'PATCH',
+      headers: headers,
+      body: JSON.stringify({
+        name, email
+      })
+    })
+    .then(getServerReply)
+};
+
+export const saveMovie = (movie) => {
+  return fetch(`${BASE_URL}/movies`, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({
+      country: movie.country,
+      director: movie.director,
+      duration: movie.duration,
+      year: movie.year,
+      description: movie.description,
+      image: `https://api.nomoreparties.co${movie.image.url}`,
+      trailerLink: movie.trailerLink,
+      thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
+      movieId: movie.id,
+      nameRU: movie.nameRU,
+      nameEN: movie.nameEN,
+    }),
+  }).then(getServerReply);
+};
+
+export const deleteMovie = (id) => {
+  return fetch(`${BASE_URL}/movies/${id}`, {
+    method: 'DELETE',
+    headers: headers
+  }).then(getServerReply);
+};
+
+export const getMovies = () => {
+  return fetch(`${BASE_URL}/movies`, {
+    method: 'GET',
+    headers: headers,
+  }).then(getServerReply);
 }
-const apiMain = new ApiMain({
-    //url: 'http://localhost:3000',
-    url: 'https://api.morozovavs.movies.nomoreparties.sbs',
-    headers: {
-        'content-type': 'application/json',
-        Authorization: '',
-    },
-});
-
-export default apiMain;

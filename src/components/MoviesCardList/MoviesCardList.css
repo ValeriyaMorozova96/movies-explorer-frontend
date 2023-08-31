@@ -61,3 +61,15 @@
        width: 240px;
     }
  }
+ 
+ .cards__error {
+   display: block;
+   font-size: 22px;
+   font-weight: 500;
+   margin: 0 auto 30px;
+   padding: 0;
+   color: #000000;
+}
+ .cards__error_none{
+   display: none;
+}

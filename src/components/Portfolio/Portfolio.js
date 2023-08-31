@@ -19,7 +19,7 @@ const Portfolio = () => {
                </a>
             </li>
             <li className="portfolio__link-container">
-               <a className="portfolio__link" rel='noreferrer' href="https://morozovavs.nomoreparties.sbs" target="_blank">
+               <a className="portfolio__link" rel='noreferrer' href="https://github.com/ValeriyaMorozova96/react-mesto-api-full-gha" target="_blank">
                   Одностраничное приложение
                   <span>↗</span>
                </a>

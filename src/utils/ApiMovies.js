@@ -17,4 +17,6 @@ class ApiMovies {
     }
 }
 
-export const apiMovies = new ApiMovies(MOVIES_URL);
+const apiMovies = new ApiMovies(MOVIES_URL);
+
+export default apiMovies;
