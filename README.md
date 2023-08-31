@@ -8,4 +8,4 @@ https://disk.yandex.ru/d/mBnkJkbFXtmMdA
 https://morozovavs.movies.nomoreparties.sbs
 
 ## Ссылка на пул реквест:
-
+https://github.com/ValeriyaMorozova96/movies-explorer-frontend/pull/2
