@@ -64,14 +64,6 @@
    background-color: transparent;
 }
 
-.card__button_saved:hover {
-   width: 22px;
-   height: 22px;
-   background-size: contain;
-   background-image: url(../../images/delete-icon.svg);
-}
-
-
 .card__button_delete {
    display: block;
    width: 22px;

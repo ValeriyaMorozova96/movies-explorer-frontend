@@ -150,7 +150,7 @@ function App() {
     }
   }, [savedMovies]);
 
-
+  
   //действия с чекбоксом на странице сохраненных фильмов
   const toggleCheckboxSavedMovies = () => {
     if (!checkboxIsGreenSavedMovies) {
@@ -180,7 +180,7 @@ function App() {
       setSortedMovies([])
     } else {
       setNotFoundMessage(false)
-      setSavedMovies(searchMovies(savedMovies, keyword, checkboxIsGreenSavedMovies))
+      setSortedMovies(searchMovies(savedMovies, keyword, checkboxIsGreenSavedMovies))
     }
     setTimeout(() => setNotFoundMessage(false), 5000)
     setTimeout(() => setIsLoadingOn(false), 1000)
@@ -297,6 +297,7 @@ function App() {
   // выход из аккаунта
   const handleSignOut = () => {
     localStorage.removeItem('jwt');
+    localStorage.clear();
     setIsLoggedIn(false);
     apiMain.setToken(null);
     setCurrentUser({});
