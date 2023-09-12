@@ -15,7 +15,6 @@ const SavedMovies = ({
    notFoundMessage,
    savedMovies }) => {
    return (
-      <>
          <main className="saved-movies">
             <SearchForm
                onSubmit={onSubmit}
@@ -35,7 +34,6 @@ const SavedMovies = ({
                />
             )}
          </main>
-      </>
    )
 }
 

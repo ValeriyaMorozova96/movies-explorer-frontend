@@ -7,7 +7,6 @@ import Portfolio from '../Portfolio/Portfolio';
 
 const Main = () => {
    return (
-      <>
          <main className="main">
             <Promo />
             <AboutProject />
@@ -15,7 +14,6 @@ const Main = () => {
             <AboutMe />
             <Portfolio />
          </main>
-      </>
    )
 }
 

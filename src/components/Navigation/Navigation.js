@@ -17,7 +17,6 @@ const Navigation = ({ loggedIn }) => {
    return (
       <>
          {loggedIn ? (
-            <>
                <div className='navigation navigation_movies'>
                   <nav className='navigation__links'>
                      <NavLink to='/movies' className={({ isActive }) => `navigation__link ${isActive ? "navigation__link_active" : ""}`}>
@@ -32,7 +31,6 @@ const Navigation = ({ loggedIn }) => {
                   </Link>
                   <button className='navigation__button-burger' type='button' onClick={openPopup} />
                </div>
-            </>
          ) : (
             <div className="navigation">
                <NavLink to="/signup" className="navigation__signup">Регистрация</NavLink>

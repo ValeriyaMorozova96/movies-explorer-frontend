@@ -18,30 +18,28 @@ const Movies = ({
    savedMovies,
 }) => {
    return (
-      <>
-         <main className="movies">
-            <SearchForm
-               onSubmit={onSubmit}
-               onCheckbox={onCheckbox}
-               checked={checked}
-               searchByKeyword={searchByKeyword}
+      <main className="movies">
+         <SearchForm
+            onSubmit={onSubmit}
+            onCheckbox={onCheckbox}
+            checked={checked}
+            searchByKeyword={searchByKeyword}
+         />
+         {isLoadingOn ? (
+            <Preloader />
+         ) : (
+            <MoviesCardList
+               isAllMovies={true}
+               movies={movies}
+               notFoundMessage={notFoundMessage}
+               serverErrorMessage={serverErrorMessage}
+               isSavedMovie={isSavedMovie}
+               onSaveMovie={onSaveMovie}
+               onDeleteMovie={onDeleteMovie}
+               savedMovies={savedMovies}
             />
-            {isLoadingOn ? (
-               <Preloader />
-            ) : (
-               <MoviesCardList
-                  isAllMovies={true}
-                  movies={movies}
-                  notFoundMessage={notFoundMessage}
-                  serverErrorMessage={serverErrorMessage}
-                  isSavedMovie={isSavedMovie}
-                  onSaveMovie={onSaveMovie}
-                  onDeleteMovie={onDeleteMovie}
-                  savedMovies={savedMovies}
-               />
-            )}
-         </main>
-      </>
+         )}
+      </main>
    )
 }
 
