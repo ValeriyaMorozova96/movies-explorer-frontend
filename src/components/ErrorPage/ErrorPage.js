@@ -1,12 +1,17 @@
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './ErrorPage.css';
 
 const ErrorPage = () => {
+
+   const navigate = useNavigate();
+   const goBack = () => {
+      navigate(-1);
+   }
    return (
       <section className="error-page">
          <h2 className="error-page__name">404</h2>
          <p className="error-page__description">Страница не найдена</p>
-         <NavLink to="/" className="error-page__link">Назад</NavLink>
+         <button className="error-page__link" type="button" onClick={goBack}>Назад</button>
       </section>
    )
 }
