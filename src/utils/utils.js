@@ -16,6 +16,8 @@ export const useWindowSize = () => {
     return windowSize;
 }
 
+//Длительность короткометражек
+const SHORT_MOVIE_LENGTH_MAX = 40;
 // Ширина экрана
 const WIDTH_BIG = 1200;
 const WIDTH_MIDDLE = 910;
@@ -40,5 +42,6 @@ export {
     START_MOVIE_NUMBER_SMALL,
     ADD_4_MOVIES,
     ADD_3_MOVIES,
-    ADD_2_MOVIES
+    ADD_2_MOVIES,
+    SHORT_MOVIE_LENGTH_MAX
 };

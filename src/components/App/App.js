@@ -15,6 +15,7 @@ import Footer from '../Footer/Footer';
 import apiMovies from "../../utils/ApiMovies";
 import * as apiMain from '../../utils/ApiMain'
 import * as apiAuth from '../../utils/ApiAuth';
+import {SHORT_MOVIE_LENGTH_MAX} from '../../utils/utils';
 
 function App() {
 
@@ -46,8 +47,6 @@ function App() {
   const [searchByKeyword, setSearchByKeyword] = useState('');
   const [checkboxIsGreen, setCheckboxIsGreen] = useState(false);
   const [checkboxIsGreenSavedMovies, setCheckboxIsGreenSavedMovies] = useState(false);
-
-  const shortMovieLengthMax = 40;
 
   // страница "Фильмы"
   useEffect(() => {
@@ -119,7 +118,7 @@ function App() {
 
   // поиск короткометражек
   const searchShortMovies = (movies) => {
-    return movies.filter((movie) => movie.duration <= shortMovieLengthMax);
+    return movies.filter((movie) => movie.duration <= (SHORT_MOVIE_LENGTH_MAX));
   };
 
   const handleFoundMoviesByKeyword = (movies, keyword, checkbox) => {
@@ -150,7 +149,7 @@ function App() {
     }
   }, [savedMovies]);
 
-  
+
   //действия с чекбоксом на странице сохраненных фильмов
   const toggleCheckboxSavedMovies = () => {
     if (!checkboxIsGreenSavedMovies) {
