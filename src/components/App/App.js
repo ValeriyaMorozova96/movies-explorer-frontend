@@ -106,6 +106,7 @@ function App() {
 
   // поиск фильмов
   const searchMovies = (movies, keyword, checkbox) => {
+    setSearchByKeyword(localStorage.getItem('searchByKeyword'));
     const moviesSearchByKeyword = movies.filter((movie) => {
       return movie.nameRU.toLowerCase().includes(keyword.toLowerCase()) || movie.nameEN.toLowerCase().includes(keyword.toLowerCase())
     })
