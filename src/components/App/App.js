@@ -171,6 +171,13 @@ function App() {
   }
 
   // поиск сохраненных фильмов по ключевому слову
+  useEffect((keyword) => {
+    if (!keyword && pathname !== '/saved-movies') {
+      setSortedMovies(savedMovies);
+      setCheckboxIsGreenSavedMovies(false);
+    }
+  }, [pathname, savedMovies]);
+
   const handleFindSavedMovies = (keyword) => {
     setIsLoadingOn(true);
     if (searchMovies(savedMovies, keyword, checkboxIsGreenSavedMovies).length === 0) {
@@ -215,6 +222,9 @@ function App() {
   // проверка токена
   useEffect(() => {
     const token = localStorage.getItem('jwt');
+    if (!token) {
+      return;
+    }
     apiMain.setToken(token);
     if (token) {
       apiAuth.checkToken(token)
