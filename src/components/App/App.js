@@ -65,7 +65,7 @@ function App() {
     }
   }, []);
 
-  // действия с чекбоксом на страницу всех фильмов
+  // действия с чекбоксом на странице всех фильмов
   const toggleCheckbox = () => {
     setCheckboxIsGreen(!checkboxIsGreen);
     if (!checkboxIsGreen) {
@@ -140,12 +140,12 @@ function App() {
 
   // страница "Сохраненные фильмы"
   useEffect(() => {
-    if (localStorage.getItem('checkboxSavedMovies') === 'false') {
-      setCheckboxIsGreenSavedMovies(false)
-      setSortedMovies(savedMovies)
-    } else {
+    if ('checkboxIsGreenSavedMovies' === 'true') {
       setCheckboxIsGreenSavedMovies(true)
       setSortedMovies(searchShortMovies(savedMovies))
+    } else {
+      setCheckboxIsGreenSavedMovies(false)
+      setSortedMovies(savedMovies)
     }
   }, [savedMovies]);
 
@@ -154,7 +154,6 @@ function App() {
   const toggleCheckboxSavedMovies = () => {
     if (!checkboxIsGreenSavedMovies) {
       setCheckboxIsGreenSavedMovies(true)
-      localStorage.setItem('checkboxSavedMovies', true);
       setSortedMovies(searchShortMovies(savedMovies));
       if (searchShortMovies(savedMovies).length === 0) {
         setNotFoundMessage(true)
@@ -162,7 +161,6 @@ function App() {
       setNotFoundMessage(false)
     } else {
       setCheckboxIsGreenSavedMovies(false)
-      localStorage.setItem('checkboxSavedMovies', false);
       if (savedMovies.length === 0) {
         setNotFoundMessage(true)
       }
@@ -303,7 +301,8 @@ function App() {
     setFoundMovies([]);
     setStartMovies([]);
     setSavedMovies([]);
-    setCheckboxIsGreen(false)
+    setCheckboxIsGreen(false);
+    setCheckboxIsGreenSavedMovies(false);
     setSearchByKeyword('');
     navigate('/');
   }
