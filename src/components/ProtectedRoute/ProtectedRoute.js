@@ -1,9 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import Preloader from '../Preloader/Preloader';
 
-function ProtectedRoute({ element: Component, isTokenChecked, loggedIn, ...props }) {
-    if (!isTokenChecked) return <Preloader />;
+function ProtectedRoute({ element: Component, loggedIn, ...props }) {
     return loggedIn ? <Component {...props} /> : <Navigate to="/" />;
 }
 

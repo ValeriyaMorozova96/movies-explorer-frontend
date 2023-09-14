@@ -16,6 +16,7 @@ import apiMovies from "../../utils/ApiMovies";
 import * as apiMain from '../../utils/ApiMain'
 import * as apiAuth from '../../utils/ApiAuth';
 import {SHORT_MOVIE_LENGTH_MAX} from '../../utils/utils';
+import Preloader from '../Preloader/Preloader';
 
 function App() {
 
@@ -24,7 +25,6 @@ function App() {
   const isMainPage = pathname === "/";
 
   const [loggedIn, setIsLoggedIn] = useState(false);
-  const [isTokenChecked, setIsTokenChecked] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
   // ошибки и загрузка
@@ -33,6 +33,7 @@ function App() {
   const [serverErrorMessage, setServerErrorMessage] = useState(false);
   const [notFoundMessage, setNotFoundMessage] = useState(false);
   const [isLoadingOn, setIsLoadingOn] = useState(false);
+  const [isLoadingPage, setIsLoadingPage] = useState(true);
 
   // данные всех фильмов
   const [moviesData, setMoviesData] = useState([]);
@@ -224,6 +225,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('jwt');
     if (!token) {
+      setIsLoadingPage(false);
       return;
     }
     apiMain.setToken(token);
@@ -234,7 +236,6 @@ function App() {
         .then((user) => {
           setCurrentUser(user);
           setIsLoggedIn(true);
-          setIsTokenChecked(true);
         })
       apiMain
         .getMovies()
@@ -256,6 +257,7 @@ function App() {
           }
         })
         .finally(() => {
+          setIsLoadingPage(false)
           setTimeout(() => setErrorMessage(''), 3000);
         });
     }
@@ -339,6 +341,8 @@ function App() {
       });
   }
 
+  if (isLoadingPage) return (<Preloader/>)
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -354,7 +358,6 @@ function App() {
             element={<ProtectedRoute
               element={Movies}
               loggedIn={loggedIn}
-              isTokenChecked={isTokenChecked}
               movies={foundMovies}
               notFoundMessage={notFoundMessage}
               serverErrorMessage={serverErrorMessage}
@@ -373,7 +376,6 @@ function App() {
             element={<ProtectedRoute
               element={SavedMovies}
               loggedIn={loggedIn}
-              isTokenChecked={isTokenChecked}
               movies={sortedMovies}
               notFoundMessage={notFoundMessage}
               onDeleteMovie={handleDeleteMovie}
@@ -391,7 +393,6 @@ function App() {
               loggedIn={loggedIn}
               onSignOut={handleSignOut}
               onProfileChange={handleChangeProfile}
-              isTokenChecked={isTokenChecked}
               profileMessage={profileMessage}
             />}
           />
