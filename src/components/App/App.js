@@ -141,7 +141,7 @@ function App() {
 
   // страница "Сохраненные фильмы"
   useEffect(() => {
-    if ('checkboxIsGreenSavedMovies' === 'true') {
+    if (localStorage.getItem('checkboxIsGreenSavedMovies') === 'true') {
       setCheckboxIsGreenSavedMovies(true)
       setSortedMovies(searchShortMovies(savedMovies))
     } else {
@@ -150,11 +150,11 @@ function App() {
     }
   }, [savedMovies]);
 
-
   //действия с чекбоксом на странице сохраненных фильмов
   const toggleCheckboxSavedMovies = () => {
     if (!checkboxIsGreenSavedMovies) {
       setCheckboxIsGreenSavedMovies(true)
+      localStorage.setItem('checkboxIsGreenSavedMovies', true);
       setSortedMovies(searchShortMovies(savedMovies));
       if (searchShortMovies(savedMovies).length === 0) {
         setNotFoundMessage(true)
@@ -162,6 +162,7 @@ function App() {
       setNotFoundMessage(false)
     } else {
       setCheckboxIsGreenSavedMovies(false)
+      localStorage.setItem('checkboxIsGreenSavedMovies', false);
       if (savedMovies.length === 0) {
         setNotFoundMessage(true)
       }
