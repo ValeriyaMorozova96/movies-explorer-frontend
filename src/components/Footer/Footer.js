@@ -11,7 +11,6 @@ const Footer = () => {
                <a className="footer__link" href="https://github.com/ValeriyaMorozova96" rel="noreferrer" target="_blank">Github</a>
             </div>
          </div>
-
       </footer>
    )
 }

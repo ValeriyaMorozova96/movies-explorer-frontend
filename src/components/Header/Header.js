@@ -3,8 +3,8 @@ import './Header.css'
 import HeaderLogo from '../../images/header-logo.svg' 
 import Navigation from '../Navigation/Navigation';
 
-const Header = ({ loggedIn }) => {
-   const headerColor = (`header ${loggedIn ? 'header_white' : 'header'}`);
+const Header = ({ loggedIn, isMainPage }) => {
+   const headerColor = (`header ${isMainPage ? 'header' : 'header_white'}`);
    return (
       <header className={headerColor}>
          <NavLink to='/'>

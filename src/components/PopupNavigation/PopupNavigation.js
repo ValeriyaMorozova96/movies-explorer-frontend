@@ -7,7 +7,7 @@ const PopupNavigation = ({ isOpen, onClose }) => {
         <div className={`popup ${popupIsOpen}`}>
             <div className='popup__container'>
                 <button type='button' className='popup__close-button' onClick={onClose} />
-                <ul className='popup__menu'>
+                <ul className='popup__menu' onClick={onClose}>
                     <li className='popup__menu-item'>
                         <NavLink to='/' className={({ isActive }) => `popup__link ${isActive ? "popup__link_active" : ""}`}>
                             Главная
@@ -25,7 +25,7 @@ const PopupNavigation = ({ isOpen, onClose }) => {
                     </li >
                 </ul>
                 <Link to='/profile'>
-                    <button className='popup__profile-button'></button>
+                    <button className='popup__profile-button' onClick={onClose}></button>
                 </Link>
             </div>
         </div>
